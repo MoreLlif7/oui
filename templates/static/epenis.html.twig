@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1 class="oui">Table du E-Penis</h1>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nom :</th>
+                <th scope="col">Message :</th>
+                <th scope="col">Note :</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ePeni in ePenis %}
+            <tr class="{{ cycle(["table-primary","table-secondary"], loop.index0)}}">
+                <td>{{ ePeni.nom | capitalize}}</td>
+                <td>{{ ePeni.message | capitalize}}</td>
+                <td>{{ePeni.note}}</td>
+            </tr>   
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %}
